@@ -144,6 +144,7 @@ programs <- student_programs |>
     campus_id,
     term_id,
     program_code,
+    program,
     major_area,
     graduated,
     is_primary_program,
@@ -169,7 +170,8 @@ student_program_summary <- students_with_programs |>
   group_by(
     stc_person_id,
     program_code,
-    major_area
+    major_area,
+    program
   ) |>
   summarize(
     first_start_date = min(term_start_date, na.rm = TRUE),
