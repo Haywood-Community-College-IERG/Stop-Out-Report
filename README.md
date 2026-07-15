@@ -12,7 +12,7 @@ A stop-out is a student who enrolled in a program at some point in the past 10 y
 
 1. Connects to the IERG data warehouse via `ccdwr`.
 2. Determines the current term and calculates a 10-year lookback window.
-3. Pulls course enrollment records (`Student_Acad_Cred`), program enrollment records (`Student_Programs_V9_Data`), graduation credentials (`Acad_Credentials`), and program metadata (`ACAD_PROGRAMS__USER_Current`).
+3. Pulls course enrollment records (`Student_Acad_Cred`), program enrollment records (`Student_Programs_V9_Data`), graduation credentials (`Acad_Credentials`), and program metadata (`ACAD_PROGRAMS__USER_Current`). Program enrollment records include both the program code and its full program name, which is more descriptive than the broader major area.
 4. Builds a per-student-per-program summary that flags:
    - Whether the student graduated from that specific program.
    - Whether they graduated from any program or any major area.
@@ -50,7 +50,7 @@ Four value boxes at the top update in real time as filters change:
 
 ## Data table
 
-The table shows one record per student per program for the student's last active term. Columns are color-coded for quick scanning: CCP, High School, Primary Program, and all graduation flags are highlighted when `TRUE`.
+The table shows one record per student per program for the student's last active term, including the Program Code, its full Program name, and the broader Major Area. Columns are color-coded for quick scanning: CCP, High School, Primary Program, and all graduation flags are highlighted when `TRUE`.
 
 ## Download
 
